@@ -1,0 +1,178 @@
+<div data-section-id="{{ section.id }}"  data-section-type="vertical-product-grid-type-1" class="vertical-product-grid-type-1">
+  <div class="container">
+ {%- assign collection = collections[section.settings.collection] -%}
+ {%- assign limit = section.settings.grid | times: section.settings.rows -%}  
+  {%- assign tp = section.settings.total_products  -%}
+  <div class="vertical-product-grid">       
+      {% if section.settings.title != blank or section.settings.text  %}
+      <div class="section-header section-header--small">
+        <div class="border-title">
+          {% endif %}            
+          {% if section.settings.title != blank %}
+          <h2 class="section-header__title" style="color:{{ section.settings.title_clr }};">    
+            {{ section.settings.title }}
+          </h2>
+          {% endif %}  
+          {% if section.settings.text != blank %}
+          <div class="short-desc"><p style="color:{{ section.settings.text_clr }};">{{ section.settings.text }}</p></div>
+          {% endif %}  
+          {% if section.settings.title != blank or section.settings.text  %}
+        </div>
+      </div>    
+    <div class="dt-sc-hr-invisible-small"></div>
+      {% endif %}      
+  		 {% case section.settings.grid %}
+            {% when '2' %}
+            {%- assign grid_item_width = 'wide--one-half post-large--one-half large--one-half medium--one-half small-grid__item' -%}
+            {% when '3' %}
+            {%- assign grid_item_width = 'wide--one-third post-large--one-third large--one-half medium--one-half small-grid__item' -%}
+            {% when '4' %}
+            {%- assign grid_item_width = 'wide--one-quarter post-large--one-quarter large--one-half medium--one-half small-grid__item' -%}
+            {% when '5' %}
+            {%- assign grid_item_width = 'wide--one-fifth post-large--one-quarter large--one-half medium--one-half small-grid__item' -%}            
+            {% endcase %}
+   
+      <div class="grid-uniform">    
+  
+      <ul class="v_grid-type-1__items">
+        {% for product in collection.products limit:limit   %}
+        {% include 'v_grid_item', grid_item_width:grid_item_width %}          
+        {% endfor %}
+      </ul>       
+    </div>
+    </div>
+    
+    <style>
+    {% if section.settings.heading_image_need %} .vertical-product-grid-type-1 .border-title:after {  content:"";background-image:url({{ section.settings.heading_image | img_url: 'master' }});display:inline-block;background-repeat:no-repeat;width:135px;height:57px;} {% endif %}
+
+  </style>
+    </div>
+  </div>  
+   <script type="text/javascript">    
+    var colours = ["{{ settings.letter_one }}", "{{ settings.letter_two }}", "{{ settings.letter_three }}", "{{ settings.letter_four }}", "{{ settings.letter_five }}", "{{ settings.letter_six }}", "{{ settings.letter_seven }}"], idx;
+    $(function() {
+    var div = $('.vertical-product-grid-type-1 .border-title h2'); 
+    var chars = div.text().split('');
+    div.html('');     
+    for(var i=0; i<chars.length; i++) {
+        idx = Math.floor(Math.random() * colours.length);
+        var span = $('<span>' + chars[i] + '</span>').css("color", colours[idx]);
+        div.append(span);
+    }
+});
+    
+  </script>
+  <div class="dt-sc-hr-invisible-large"></div> 
+  
+{% schema %}
+{
+  "name": "Vertical Grid",
+  "class": "index-section",
+  "settings": [  
+
+		{
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "New arrivals"
+    },	
+{
+      "type": "checkbox",
+      "id": "heading_image_need",
+      "label": "Show Heading Image ?"
+      
+    },	
+{
+      "type": "image_picker",
+      "id": "heading_image",
+      "label": "Image",
+	  "info": "Size: 133x56"
+      
+    },	
+    {
+          "type": "color",
+          "id": "title_clr",
+          "label": "Heading Color",
+          "default":"#000"
+          },
+    {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description"
+
+     },	
+		{
+          "type": "color",
+          "id": "text_clr",
+          "label": "Text Color",
+          "default":"#000"
+          },
+    {
+      "id": "collection",
+      "type": "collection",
+      "label": "Collection"
+    },
+
+    {
+      "type": "select",
+      "id": "grid",
+      "label": "Products per row",
+      "default": "3",
+      "options": [
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+        
+      ]
+    },
+{
+        "type": "select",
+        "id": "rows",
+        "label": "Rows per page (grid only)",
+        "default": "2",
+        "options": [
+			{
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          }          
+        ]
+      }
+  
+  ],
+  "presets": [
+    {
+     "name": "Vertical Grid",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+

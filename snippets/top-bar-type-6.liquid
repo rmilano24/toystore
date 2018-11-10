@@ -1,0 +1,62 @@
+
+<div class="top_bar top-bar-type-6">    
+  <div class="container">
+    {% if section.settings.header_phone_value != blank or  section.settings.header_mail_value != blank %}
+    <ul class="top_bar_left">
+      {% if section.settings.header_phone_value != blank %}
+      <li><span>{{ section.settings.header_phone_label }} : {{ section.settings.header_phone_value }}</span></li>
+      {% endif %}
+      {% if section.settings.header_mail_value != blank %}
+      <li><span>{{ section.settings.header_mail_label }} :</span><a href="mailto:{{ section.settings.header_mail_value }}"> {{ section.settings.header_mail_value }}</a></li>
+      {% endif %}
+    </ul>
+    {% endif %}
+    <div class="top_bar_menu">
+      {%- assign top_bar_menu = section.settings.top_bar_menu %}
+      {% if linklists[top_bar_menu].links.size > 0 %}
+      <ul>
+        {% for link in linklists[top_bar_menu].links %}
+        <li>
+          <a href="{{ link.url }}" class="{% if link.active %}current{% endif %}">
+            {{ link.title }}         
+          </a> 	    
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}             
+      <div class="customer_account">                          
+        <ul>
+          {% if shop.customer_accounts_enabled %}
+          {% if customer %}
+          <li>
+           <a href="/account"><i class="icon-user-following"></i></a>
+          </li>
+          <li class="logout-link">
+              <a href="/account/logout"><i class="icon-user-unfollow"></i></a>
+            </li>
+          {% else %}
+          <li>
+            <a href="/account/login"><i class="icon-login"></i></a>
+          </li>
+          <li>
+            <a href="/account/register"><i class="icon-user"></i></a>
+          </li>          
+          {% endif %}  
+          {% endif %} 
+          {% if section.settings.display_wishlist %}   
+          <li>            
+          <a class="wishlist" href="/pages/wishlist" title="{{ 'products.wishlist.wishlist_name' | t }}"><i class="fa fa-heart-o"></i></a>       
+          </li>
+          {% endif %} 
+        </ul>
+      </div>    
+      {% if section.settings.display_like_btn %}
+      {% if section.settings.like_btn_url != blank %}
+      <div class="top_like_btn">       
+        {% include 'like-button' %}
+      </div>
+      {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</div> 

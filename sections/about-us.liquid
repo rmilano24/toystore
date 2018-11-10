@@ -1,0 +1,1099 @@
+
+<div data-section-id="{{ section.id }}"  data-section-type="About section" class="aboutus">
+  {% if section.settings.showvedaone_1_section %}
+  <div class="grid-uniform section-one">
+    <div class="container">
+      <div class="grid__item">
+        <div class="grid__item post-large--one-half">
+          {% if section.settings.abtone_1_title != blank %}
+          <div class="main-title">
+            <h2 style="color:{{section.settings.abtone_1_maintilte }}">{{ section.settings.abtone_1_title }}</h2>
+            <div class="title-sep" style="background:{{section.settings.abtone_1_maintilte }}"></div>
+          </div>
+          {% endif %}
+          {% if section.settings.abtone_1_des != blank %}
+          <p style="color:{{section.settings.abtone_1_desc }}">{{section.settings.abtone_1_des }}</p>
+          {% endif %}          
+          {% if section.settings.abtone_1_quote != blank %}
+          <div class="quote">
+            <p style="color:{{section.settings.abtone_1_quotecolor }}"> {{section.settings.abtone_1_quote }} </p>  
+            {% if section.settings.abtone_1_authorname!= blank %}    <span class="author-name" style="color:{{section.settings.abtone_1_authorcolor }}"> {{section.settings.abtone_1_authorname}}</span>{% endif %}
+          </div>
+          {% endif %}
+        </div>
+        {% if  section.settings.abtone_image_1 != blank %}
+        <div class="grid__item post-large--one-half">
+          <div class="section-one-rightimg">
+            <img src="{{  section.settings.abtone_image_1 | img_url: "master" }}" alt="{{ section.settings.abtone_image_1_heading }}" />
+          </div>
+        </div>
+        {% endif %} 
+      </div>
+    </div>
+  </div>
+  {% endif %} 
+
+
+  {% if section.settings.show_2_section %}
+  <div class="section-two">
+    <div class="container">
+      <div class="grid__item">
+        <div class="grid__item">
+          {% if section.settings.detail_1_section %}
+          <div class="grid__item wide--one-half post-large--one-half large--one-half">
+            <div class="detail-block" style="background-image:url({{section.settings.detail_1_bgimg | img_url: '2048x2048' }});">
+              <div class="grid__item wide--one-half post-large--one-half large--one-half">
+                <div class="detail detail-one" style="background-color:{{ section.settings.detail_1_bgcolor | color_modify: 'alpha', 0.8 }};" >
+                  {% if section.settings.detail_1_icon != blank %}
+                  <span class="detail-icon">
+                    <i class="{{section.settings.detail_1_icon }}"   style="color:{{section.settings.detailicon_1_color}};background:{{section.settings.detailicon_1_bgcolor}};" aria-hidden="true"></i>
+                  </span>
+                  {% endif %} 
+                  {% if section.settings.detail_1_title != blank %}
+                  <h4 style="color:{{section.settings.detail_1_title_color}};">{{section.settings.detail_1_title }}</h4>
+                  {% endif %}
+                  {% if section.settings.detail_1_desc != blank %}
+                  <p style="color:{{section.settings.detail_1_desc_color}};">{{section.settings.detail_1_desc}}</p>
+                  {% endif %} 
+                  {% if section.settings.detail_1_price != blank %}
+                  <span class="price" style="color:{{section.settings.detail_1_price_color}};background:{{section.settings.detail_1_price_bgcolor}};">{{section.settings.detail_1_price}}</span>
+                  {% endif %}                  
+                </div>
+              </div>
+            </div>            
+          </div>
+          {% endif %}
+          {% if section.settings.detail_2_section %}
+          <div class="grid__item wide--one-half post-large--one-half large--one-half">
+            <div class="detail-block " style="background-image:url({{section.settings.detail_2_bgimg | img_url: '2048x2048' }});">
+              <div class="grid__item wide--one-half post-large--one-half large--one-half">
+                <div class="detail detail-two" style="background-color:{{ section.settings.detail_2_bgcolor | color_modify: 'alpha', 0.8 }};" >
+                  {% if section.settings.detail_2_icon != blank %}
+                  <span class="detail-icon">
+                    <i class="{{section.settings.detail_2_icon }}"   style="color:{{section.settings.detailicon_2_color}};background:{{section.settings.detailicon_2_bgcolor}};" aria-hidden="true"></i>
+                  </span>
+                  {% endif %} 
+                  {% if section.settings.detail_2_title != blank %}
+                  <h4 style="color:{{section.settings.detail_2_title_color}};">{{section.settings.detail_2_title }}</h4>
+                  {% endif %}
+                  {% if section.settings.detail_2_desc != blank %}
+                  <p style="color:{{section.settings.detail_2_desc_color}};">{{section.settings.detail_2_desc}}</p>
+                  {% endif %} 
+                  {% if section.settings.detail_2_price != blank %}
+                  <span class="price" style="color:{{section.settings.detail_2_price_color}};background:{{section.settings.detail_2_price_bgcolor}};">{{section.settings.detail_2_price}}</span>
+                  {% endif %}                 
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% if section.settings.detail_3_section %}
+          <div class="grid__item wide--one-half post-large--one-half large--one-half">
+            <div class="detail-block" style="background-image:url({{section.settings.detail_3_bgimg | img_url: '2048x2048' }});">
+              <div class="grid__item wide--one-half post-large--one-half large--one-half"></div>
+              <div class="grid__item wide--one-half post-large--one-half large--one-half">
+                <div class="detail detail-three" style="background-color:{{ section.settings.detail_3_bgcolor | color_modify: 'alpha', 0.8 }};" >
+                  {% if section.settings.detail_3_icon != blank %}
+                  <span class="detail-icon">
+                    <i class="{{section.settings.detail_3_icon }}"   style="color:{{section.settings.detailicon_3_color}};background:{{section.settings.detailicon_3_bgcolor}};" aria-hidden="true"></i>
+                  </span>
+                  {% endif %} 
+                  {% if section.settings.detail_3_title != blank %}
+                  <h4 style="color:{{section.settings.detail_3_title_color}};">{{section.settings.detail_3_title }}</h4>
+                  {% endif %}
+                  {% if section.settings.detail_3_desc != blank %}
+                  <p style="color:{{section.settings.detail_3_desc_color}};">{{section.settings.detail_3_desc}}</p>
+                  {% endif %} 
+                  {% if section.settings.detail_3_price != blank %}
+                  <span class="price" style="color:{{section.settings.detail_3_price_color}};background:{{section.settings.detail_3_price_bgcolor}};">{{section.settings.detail_3_price}}</span>
+                  {% endif %}                 
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% if section.settings.detail_4_section %}
+          <div class="grid__item wide--one-half post-large--one-half large--one-half">
+            <div class="detail-block " style="background-image:url({{section.settings.detail_4_bgimg | img_url: '2048x2048' }});">
+              <div class="grid__item wide--one-half post-large--one-half large--one-half"></div>
+              <div class="grid__item wide--one-half post-large--one-half large--one-half">
+                <div class="detail detail-four detail-right" style="background-color:{{ section.settings.detail_4_bgcolor | color_modify: 'alpha', 0.8 }};" >
+                  {% if section.settings.detail_4_icon != blank %}
+                  <span class="detail-icon">
+                    <i class="{{section.settings.detail_4_icon }}"   style="color:{{section.settings.detailicon_4_color}};background:{{section.settings.detailicon_4_bgcolor}};" aria-hidden="true"></i>
+                  </span>
+                  {% endif %} 
+                  {% if section.settings.detail_4_title != blank %}
+                  <h4 style="color:{{section.settings.detail_4_title_color}};">{{section.settings.detail_4_title }}</h4>
+                  {% endif %}
+                  {% if section.settings.detail_4_desc != blank %}
+                  <p style="color:{{section.settings.detail_4_desc_color}};">{{section.settings.detail_4_desc}}</p>
+                  {% endif %} 
+                  {% if section.settings.detail_4_price != blank %}
+                  <span class="price" style="color:{{section.settings.detail_4_price_color}};background:{{section.settings.detail_4_price_bgcolor}};">{{section.settings.detail_4_price}}</span>
+                  {% endif %}                 
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if section.settings.section_two %}
+  <div class="grid-uniform section-three" style="background:{{section.settings.section_2_bg}}">
+    <div class="container">
+      {% if  section.settings.section_2_title  != blank %}
+      <div class="main-title">
+        <h2 style="color:{{section.settings.section_2_title_color  }}">{{section.settings.section_2_title}}</h2>
+        {% if  section.settings. section_2_subtitle  != blank %}
+        <h6 style="color:{{section.settings.section_2_subtitle_color}}">{{section.settings.section_2_subtitle}}</h6>
+        {% endif %}
+        {% if  section.settings.section_2_img  != blank %}
+        <img src="{{  section.settings.section_2_img  | img_url: "master" }}" alt="{{ section.settings.section_2_imgheading }}" />
+        {% endif %}
+      </div>
+      {% endif %}
+      <div class="grid__item">
+        {% if section.settings.show_1_icon  %}
+        <div class="column grid__item wide--one-fifth post-large--one-fifth large--one-fifth medium--one-third small-grid__item  small--grid__item">
+          <div class="icon-wrapper">
+            {% if section.settings.icon_1_img  %}
+            <div class="icon">
+              <img src="{{  section.settings.icon_1_img  | img_url: "master" }}" alt="{{ section.settings.icon_1_imgheading }}" />
+            </div>
+            {% endif %}
+            {% if  section.settings.icon_1_title  != blank %}
+            <h5>{{section.settings.icon_1_title}}</h5>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %} 
+        {% if section.settings.show_2_icon  %}
+        <div class="column grid__item wide--one-fifth post-large--one-fifth large--one-fifth medium--one-third small-grid__item  small--grid__item">
+          <div class="icon-wrapper">
+            {% if section.settings.icon_2_img  %}
+            <div class="icon">
+              <img src="{{  section.settings.icon_2_img  | img_url: "master" }}" alt="{{ section.settings.icon_2_imgheading }}" />
+            </div>
+            {% endif %}
+            {% if  section.settings.icon_2_title  != blank %}
+            <h5>{{section.settings.icon_2_title}}</h5>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %} 
+        {% if section.settings.show_3_icon  %}
+        <div class="column grid__item wide--one-fifth post-large--one-fifth large--one-fifth medium--one-third small-grid__item  small--grid__item">
+          <div class="icon-wrapper">
+            {% if section.settings.icon_3_img  %}
+            <div class="icon">
+              <img src="{{  section.settings.icon_3_img  | img_url: "master" }}" alt="{{ section.settings.icon_3_imgheading }}" />
+            </div>
+            {% endif %}
+            {% if  section.settings.icon_3_title  != blank %}
+            <h5>{{section.settings.icon_3_title}}</h5>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %} 
+        {% if section.settings.show_4_icon  %}
+        <div class="column grid__item wide--one-fifth post-large--one-fifth large--one-fifth medium--one-third small-grid__item  small--grid__item">
+          <div class="icon-wrapper">
+            {% if section.settings.icon_4_img  %}
+            <div class="icon">
+              <img src="{{  section.settings.icon_4_img  | img_url: "master" }}" alt="{{ section.settings.icon_4_imgheading }}" />
+            </div>
+            {% endif %}
+            {% if  section.settings.icon_4_title  != blank %}
+            <h5>{{section.settings.icon_4_title}}</h5>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %} 
+        {% if section.settings.show_5_icon  %}
+        <div class="column grid__item wide--one-fifth post-large--one-fifth large--one-fifth medium--one-third small-grid__item  small--grid__item">
+          <div class="icon-wrapper">
+            {% if section.settings.icon_5_img  %}
+            <div class="icon">
+              <img src="{{  section.settings.icon_5_img  | img_url: "master" }}" alt="{{ section.settings.icon_5_imgheading }}" />
+            </div>
+            {% endif %}
+            {% if  section.settings.icon_5_title  != blank %}
+            <h5>{{section.settings.icon_5_title}}</h5>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %} 
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+
+
+  {% if section.settings.show_team_section != blank %}
+  <div class="grid-uniform section-seven">
+    <div class="container">
+      {% if section.settings.section_7_mainheading != blank %}
+      <div class="main-heading">
+        <h2>  {{section.settings.section_7_mainheading}}</h2>
+        {% if section.settings.section_7_subheading != blank %}
+        <h6>  {{section.settings.section_7_subheading}}</h6>
+        {% endif %}
+      </div>
+      {% endif %}
+      <div class="grid__item">
+        {% if section.blocks.size > 0 %}  
+        {% for block in section.blocks %}         
+        <div class="grid__item wide--one-quarter post-large--one-quarter large--one-quarter medium--one-half small-grid__item">
+          <div class="team-wrapper">
+            {% if block.settings.team_6_image != blank %}
+            <div class="team-img">
+              <img src="{{ block.settings.team_6_image | img_url: '1024x1024' }}" alt="" title="" /> 
+            </div>
+            {% endif %}
+            <div class="team-detail">
+              {% if block.settings.team_title != blank %}
+              <h5>{{block.settings.team_title }}</h5>
+              {% endif %}
+              {% if block.settings.team_subtitle != blank %}
+              <h6>{{block.settings.team_subtitle }}</h6>
+              {% endif %}
+              <ul class="social-icon">
+                {% if block.settings.social_1_icon != blank %}
+                <li><a href=""><i class="{{block.settings.social_1_icon }}" aria-hidden="true"></i></a></li>
+                {% endif %}
+                {% if block.settings.social_2_icon != blank %}
+                <li><a href=""><i class="{{block.settings.social_2_icon }}" aria-hidden="true"></i></a></li>
+                {% endif %}
+                {% if block.settings.social_3_icon != blank %}
+                <li><a href=""><i class="{{block.settings.social_3_icon }}" aria-hidden="true"></i></a></li>
+                {% endif %}
+                {% if block.settings.social_4_icon != blank %}
+                <li><a href=""><i class="{{block.settings.social_4_icon }}" aria-hidden="true"></i></a></li>
+                {% endif %}
+              </ul> 
+            </div>
+          </div>
+        </div>        
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if section.settings.showvedaone_6_section %}
+  <div class="grid-uniform section-six"  style="background-color:{{section.settings.aboutveda_1_sectionsixbg}};">
+    <div class="container">   
+      <div class="grid__item wide--three-fifths post-large--three-fifths">     
+        <div class="sectionsix-txtblk">
+          <div class="sectionsix-img">
+            {% if  section.settings.abtone_image_6 != blank %}
+            <img src="{{  section.settings.abtone_image_6 | img_url: "master" }}" alt="{{ section.settings.abtone_image_6_heading }}" />
+            {% endif %} 
+            {% if  section.settings.abtone_6_des != blank %}
+            <p style="color:{{section.settings.abtone_6_desc}}">{{section.settings.abtone_6_des }}</p>
+            {% endif %} 
+          </div>
+        </div>  
+      </div>
+      <div class="grid__item wide--two-fifths post-large--two-fifths">
+        {% include 'newsletter-form' %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+
+  .aboutus .author-name::after {background:{{section.settings.aboutveda_1_bordercolor}};}
+
+  .aboutus  .detail-block:hover .detail.detail-one{background-color:{{ section.settings.detail_1_bgcolor | color_modify: 'alpha', 1 }}!important;}
+
+  .aboutus  .detail-block:hover .detail.detail-two{background-color:{{ section.settings.detail_2_bgcolor | color_modify: 'alpha', 1 }}!important;}
+
+  .aboutus  .detail-block:hover .detail.detail-three{background-color:{{ section.settings.detail_3_bgcolor | color_modify: 'alpha', 1 }}!important;}
+
+  .aboutus  .detail-block:hover .detail.detail-four{background-color:{{ section.settings.detail_4_bgcolor | color_modify: 'alpha', 1 }}!important;}
+
+  .aboutus .icon-wrapper .icon {border: 5px solid {{section.settings.section_2_bordercolor}};}
+
+  .aboutus .icon-wrapper h5 ,.aboutus .icon-wrapper span {color: {{section.settings.section_2_iconcolor}};}
+
+  .aboutus .section-seven .main-heading h2{color:{{section.settings.mainheading_color}};}
+
+  .aboutus  .section-seven .main-heading  h6{color:{{section.settings.subheading_color}};}
+
+  .aboutus  .team-detail{background:{{section.settings.section_7_teambgcolor}};}
+
+  .aboutus    .team-detail  h5 , .aboutus .team-detail  h6{color:{{section.settings.section_7_teamcolor}};}
+
+  .aboutus   .social-icon a{border:1px solid {{section.settings.section_7_teamcolor}};color:{{section.settings.section_7_teamcolor}};}
+
+  .aboutus  .social-icon a:hover{border:1px solid {{section.settings.section_7_teambgcolor}};}
+
+  .aboutus .section-six .btn { background:{{section.settings.aboutveda_1_pribtnbg}};color:{{section.settings.aboutveda_1_pribtncolor}};}
+
+  .aboutus .section-six .btn:hover{background:{{section.settings.aboutvedabtnhoverbg}};color:{{section.settings.aboutvedabtnhovercolor}} !important;}
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% schema %}
+{
+"name": "About-us Page",
+"settings": [
+
+{
+"type": "header",
+"content": "Section one"
+},
+{
+"type": "checkbox",
+"id": "showvedaone_1_section",
+"label": "Display  This Section"
+},
+{
+"type": "text",
+"id": "abtone_1_title",
+"label": "Heading"
+},
+{
+"type": "color",
+"id": "abtone_1_maintilte",
+"default": "#000",
+"label": "Heading COlor"
+},
+{
+"type": "textarea",
+"id": "abtone_1_des",
+"label": "Description"
+},
+{
+"type": "color",
+"id": "abtone_1_desc",
+"default": "#000",
+"label": "Desc COlor"
+},
+{
+"type": "textarea",
+"id": "abtone_1_quote",
+"label": "Quote Desc"
+},
+{
+"type": "color",
+"id": "abtone_1_quotecolor",
+"default": "#000",
+"label": "Desc Color"
+},
+{
+"type": "text",
+"id": "abtone_1_authorname",
+"label": "Authorname"
+},
+{
+"type": "color",
+"id": "abtone_1_authorcolor",
+"default": "#000",
+"label": "Name Color"
+},
+{
+"type": "image_picker",
+"id": "abtone_image_1",
+"label": "Image",
+"info": "Size: 382x509"
+},
+{
+"type": "text",
+"id": "abtone_image_1_heading",
+"label": "Image Alt Text"
+},
+{
+"type": "color",
+"id": "aboutveda_1_bordercolor",
+"default": "#000",
+"label": "Border color"
+},
+{
+"type": "header",
+"content": "Section Two"
+},
+{
+"type": "checkbox",
+"id": "show_2_section",
+"label": "Display  Section Two"
+},
+{
+"type": "checkbox",
+"id": "detail_1_section",
+"label": "Display  This Section"
+},
+{
+"type": "image_picker",
+"id": "detail_1_bgimg",
+"label": "Bg Image",
+"info": "Size: 1000x1000"
+},
+{
+"type": "color",
+"id": "detail_1_bgcolor",
+"default": "#000",
+"label": "Detail Bg COlor"
+},
+{
+"type": "text",
+"id": "detail_1_icon",
+"label": "Icon Name"
+},
+{
+"type": "color",
+"id": "detailicon_1_bgcolor",
+"default": "#000",
+"label": "Detail Icon Bg Color"
+},
+{
+"type": "color",
+"id": "detailicon_1_color",
+"default": "#000",
+"label": "Detail Icon  Color"
+},
+{
+"type": "text",
+"id": "detail_1_title",
+"label": "Detail Title"
+},
+{
+"type": "color",
+"id": "detail_1_title_color",
+"default": "#000",
+"label": "Title  Color"
+},
+{
+"type": "textarea",
+"id": "detail_1_desc",
+"label": "Desc"
+},
+{
+"type": "color",
+"id": "detail_1_desc_color",
+"default": "#000",
+"label": "Desc  Color"
+},
+{
+"type": "text",
+"id": "detail_1_price",
+"label": "Price"
+},
+{
+"type": "color",
+"id": "detail_1_price_color",
+"default": "#000",
+"label": "Price Color"
+},
+{
+"type": "color",
+"id": "detail_1_price_bgcolor",
+"default": "#000",
+"label": "Price bg  Color"
+},
+{
+"type": "checkbox",
+"id": "detail_2_section",
+"label": "Display  This Section"
+},
+{
+"type": "image_picker",
+"id": "detail_2_bgimg",
+"label": "Bg Image",
+"info": "Size: 1000x1000"
+},
+{
+"type": "color",
+"id": "detail_2_bgcolor",
+"default": "#000",
+"label": "Detail Bg COlor"
+},
+{
+"type": "text",
+"id": "detail_2_icon",
+"label": "Icon Name"
+},
+{
+"type": "color",
+"id": "detailicon_2_bgcolor",
+"default": "#000",
+"label": "Detail Icon Bg Color"
+},
+{
+"type": "color",
+"id": "detailicon_2_color",
+"default": "#000",
+"label": "Detail Icon  Color"
+},
+{
+"type": "text",
+"id": "detail_2_title",
+"label": "Detail Title"
+},
+
+{
+"type": "color",
+"id": "detail_2_title_color",
+"default": "#000",
+"label": "Title  Color"
+},
+{
+"type": "textarea",
+"id": "detail_2_desc",
+"label": "Desc"
+},
+{
+"type": "color",
+"id": "detail_2_desc_color",
+"default": "#000",
+"label": "Desc  Color"
+},
+{
+"type": "text",
+"id": "detail_2_price",
+"label": "Price"
+},
+{
+"type": "color",
+"id": "detail_2_price_color",
+"default": "#000",
+"label": "Price Color"
+},
+{
+"type": "color",
+"id": "detail_2_price_bgcolor",
+"default": "#000",
+"label": "Price bg  Color"
+},
+{
+"type": "checkbox",
+"id": "detail_3_section",
+"label": "Display  This Section"
+},
+{
+"type": "image_picker",
+"id": "detail_3_bgimg",
+"label": "Bg Image",
+"info": "Size: 1000x1000"
+},
+{
+"type": "color",
+"id": "detail_3_bgcolor",
+"default": "#000",
+"label": "Detail Bg COlor"
+},
+{
+"type": "text",
+"id": "detail_3_icon",
+"label": "Icon Name"
+},
+{
+"type": "color",
+"id": "detailicon_3_bgcolor",
+"default": "#000",
+"label": "Detail Icon Bg Color"
+},
+{
+"type": "color",
+"id": "detailicon_3_color",
+"default": "#000",
+"label": "Detail Icon  Color"
+},
+{
+"type": "text",
+"id": "detail_3_title",
+"label": "Detail Title"
+},
+
+{
+"type": "color",
+"id": "detail_3_title_color",
+"default": "#000",
+"label": "Title  Color"
+},
+{
+"type": "textarea",
+"id": "detail_3_desc",
+"label": "Desc"
+},
+{
+"type": "color",
+"id": "detail_3_desc_color",
+"default": "#000",
+"label": "Desc  Color"
+},
+{
+"type": "text",
+"id": "detail_3_price",
+"label": "Price"
+},
+{
+"type": "color",
+"id": "detail_3_price_color",
+"default": "#000",
+"label": "Price Color"
+},
+{
+"type": "color",
+"id": "detail_3_price_bgcolor",
+"default": "#000",
+"label": "Price bg  Color"
+},
+{
+"type": "checkbox",
+"id": "detail_4_section",
+"label": "Display  This Section"
+},
+{
+"type": "image_picker",
+"id": "detail_4_bgimg",
+"label": "Bg Image",
+"info": "Size: 1000x1000"
+},
+{
+"type": "color",
+"id": "detail_4_bgcolor",
+"default": "#000",
+"label": "Detail Bg COlor"
+},
+{
+"type": "text",
+"id": "detail_4_icon",
+"label": "Icon Name"
+},
+{
+"type": "color",
+"id": "detailicon_4_bgcolor",
+"default": "#000",
+"label": "Detail Icon Bg Color"
+},
+{
+"type": "color",
+"id": "detailicon_4_color",
+"default": "#000",
+"label": "Detail Icon  Color"
+},
+{
+"type": "text",
+"id": "detail_4_title",
+"label": "Detail Title"
+},
+
+{
+"type": "color",
+"id": "detail_4_title_color",
+"default": "#000",
+"label": "Title  Color"
+},
+{
+"type": "textarea",
+"id": "detail_4_desc",
+"label": "Desc"
+},
+{
+"type": "color",
+"id": "detail_4_desc_color",
+"default": "#000",
+"label": "Desc  Color"
+},
+{
+"type": "text",
+"id": "detail_4_price",
+"label": "Price"
+},
+{
+"type": "color",
+"id": "detail_4_price_color",
+"default": "#000",
+"label": "Price Color"
+},
+{
+"type": "color",
+"id": "detail_4_price_bgcolor",
+"default": "#000",
+"label": "Price bg  Color"
+},
+{
+"type": "header",
+"content": "Section Three"
+},
+{
+"type": "color",
+"id": "section_2_bg",
+"default": "#000",
+"label": "Bg Color"
+},
+{
+"type": "checkbox",
+"id": "section_two",
+"label": "Display  This Section"
+},
+{
+"type": "text",
+"id": "section_2_title",
+"label": "Heading"
+},
+{
+"type": "color",
+"id": "section_2_title_color",
+"default": "#000",
+"label": "Heading Color"
+},
+{
+"type": "text",
+"id": "section_2_subtitle",
+"label": "Sub Heading"
+},
+{
+"type": "color",
+"id": "section_2_subtitle_color",
+"default": "#000",
+"label": "Sub Heading Color"
+},
+{
+"type": "image_picker",
+"id": "section_2_img",
+"label": "Image",
+"info": "Size: 32x17"
+},
+{
+"type": "text",
+"id": "section_2_imgheading",
+"label": "Image Alt Text"
+},
+{
+"type": "checkbox",
+"id": "show_1_icon",
+"label": "Display This section"
+},
+{
+"type": "image_picker",
+"id": "icon_1_img",
+"label": "Image",
+"info": "Size: 60x60"
+},
+{
+"type": "text",
+"id": "icon_1_imgheading",
+"label": "Image Alt Text"
+},
+
+{
+"type": "text",
+"id": "icon_1_title",
+"label": "Icon Title"
+},
+{
+"type": "checkbox",
+"id": "show_2_icon",
+"label": "Display This section"
+},
+{
+"type": "image_picker",
+"id": "icon_2_img",
+"label": "Image",
+"info": "Size: 60x60"
+},
+{
+"type": "text",
+"id": "icon_2_imgheading",
+"label": "Image Alt Text"
+},
+{
+"type": "text",
+"id": "icon_2_title",
+"label": "Icon Title"
+},
+{
+"type": "checkbox",
+"id": "show_3_icon",
+"label": "Display This section"
+},
+{
+"type": "image_picker",
+"id": "icon_3_img",
+"label": "Image",
+"info": "Size: 60x60"
+},
+{
+"type": "text",
+"id": "icon_3_imgheading",
+"label": "Image Alt Text"
+},
+{
+"type": "text",
+"id": "icon_3_title",
+"label": "Icon Title"
+},
+{
+"type": "checkbox",
+"id": "show_4_icon",
+"label": "Display This section"
+},
+{
+"type": "image_picker",
+"id": "icon_4_img",
+"label": "Image",
+"info": "Size: 60x60"
+},
+{
+"type": "text",
+"id": "icon_4_imgheading",
+"label": "Image Alt Text"
+},
+{
+"type": "text",
+"id": "icon_4_title",
+"label": "Icon Title"
+},
+{
+"type": "checkbox",
+"id": "show_5_icon",
+"label": "Display This section"
+},
+{
+"type": "image_picker",
+"id": "icon_5_img",
+"label": "Image Alt Text",
+"info": "Size: 60x60"
+},
+{
+"type": "text",
+"id": "icon_5_imgheading",
+"label": "Image Heading"
+},
+{
+"type": "text",
+"id": "icon_5_title",
+"label": "Icon Title"
+},
+{
+"type": "color",
+"id": "section_2_iconcolor",
+"default": "#000",
+"label": "Icon Color"
+},
+{
+"type": "color",
+"id": "section_2_bordercolor",
+"default": "#000",
+"label": "Border Color"
+},
+{
+"type": "header",
+"content": "Section Four"
+},
+{
+"type": "checkbox",
+"id": "show_team_section",
+"label": "Display This section"
+},
+{
+"type": "text",
+"id": "section_7_mainheading",
+"label": "Main Heading",
+"default": "Title...."
+},
+{
+"type": "color",
+"id": "mainheading_color",
+"label": "Heading color",
+"default": "#000"
+},
+{
+"type": "text",
+"id": "section_7_subheading",
+"label": "Sub Heading",
+"default": "Sub Title..."
+},
+{
+"type": "color",
+"id": "subheading_color",
+"label": "Sub Heading color",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "section_7_teambgcolor",
+"label": "Team bg color",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "section_7_teamcolor",
+"label": "Team Text color",
+"default": "#000"
+},
+{
+"type": "header",
+"content": "Section Five"
+},
+{
+"type": "checkbox",
+"id": "showvedaone_6_section",
+"label": "Display  This Section"
+},
+{
+"type": "color",
+"id": "aboutveda_1_sectionsixbg",
+"default": "#000",
+"label": "bg color"
+},
+{
+"type": "image_picker",
+"id": "abtone_image_6",
+"label": "Image",
+"info": "Size: 60x106"
+},
+{
+"type": "text",
+"id": "abtone_image_6_heading",
+"label": "Image Alt Text"
+},
+{
+"type": "textarea",
+"id": "abtone_6_des",
+"label": "Description"
+},
+{
+"type": "color",
+"id": "abtone_6_desc",
+"default": "#000",
+"label": "Desc COlor"
+},
+{
+"type": "color",
+"id": "aboutveda_1_pribtnbg",
+"default": "#000",
+"label": "Button bg "
+},
+{
+"type": "color",
+"id": "aboutveda_1_pribtncolor",
+"default": "#000",
+"label": "Button text color"
+},
+{
+"type": "color",
+"id": "aboutvedabtnhoverbg",
+"default": "#000",
+"label": "Button hover bg "
+},
+{
+"type": "color",
+"id": "aboutvedabtnhovercolor",
+"default": "#000",
+"label": "Button hover color "
+}
+],
+
+"blocks": [
+{
+"type": "text",
+"name":"Team Section",
+"settings": [
+{
+"type": "image_picker",
+"id": "team_6_image",
+"label": "Image",
+"info": "Size: 279x336"
+},
+{
+"type": "text",
+"id": "team_title",
+"label": "Heading",
+"default": "Heading"
+},
+{
+"type": "text",
+"id": "team_subtitle",
+"label": "Sub Heading",
+"default": "Heading"
+},
+{
+"type": "text",
+"id": "social_1_icon",
+"label": "Social Icon",
+"default": "class name"
+},
+{
+"type": "text",
+"id": "social_2_icon",
+"label": "Social Icon",
+"default": "class name"
+},
+{
+"type": "text",
+"id": "social_3_icon",
+"label": "Social Icon",
+"default": "class name"
+},
+{
+"type": "text",
+"id": "social_4_icon",
+"label": "Social Icon",
+"default": "class name"
+}
+]
+}
+]
+}
+{% endschema %}
+
+{% javascript %}
+{% endjavascript %}

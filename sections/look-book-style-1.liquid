@@ -1,0 +1,289 @@
+<div data-section-id="{{ section.id }}" data-section-type="look-book-style-1" class="look-book-style-1">  
+  <div class="grid-uniform">    
+     <div class="container">   
+       <div class="look-book">  
+         {% if section.settings.title_1 != blank or section.settings.caption_1  %}
+        <div class="border-title">
+          {% endif %}  
+           {% if section.settings.title_1 != blank %}
+           <h2 style="color:{{ section.settings.title_1_color }};">{{ section.settings.title_1 }}</h2>
+           {% endif %}
+           {% if section.settings.caption_1 != blank %}
+           <div class="short-desc"> <p style="color:{{ section.settings.caption_1_color }};">{{ section.settings.caption_1 }}</p></div>
+           {% endif %}
+         
+         {% if section.settings.title_1 != blank or section.settings.caption_1  %}
+        </div>
+    <div class="dt-sc-hr-invisible-small"></div>
+      {% endif %}
+      
+         <div class="accordion">
+           <ul>
+              {% for block in section.blocks %} 
+             <li style="background-image:url('{{ block.settings.image_1 | img_url: 'master' }}');">
+               <div class="look-book-content"> 
+                 
+                   {% if block.settings.title != blank %}
+                   <h2 style="color:{{ block.settings.title_clr }};">{{ block.settings.title }}</h2>
+                   {% endif %}
+                   {% if block.settings.desc != blank %}
+                   <p style="color:{{ block.settings.desc_clr }};">{{ block.settings.desc }}</p>
+                   {% endif %}                  
+                    {% if block.settings.button_1 != blank %}
+                  <a class="btn" href="{{ block.settings.link_1 }}">{{ block.settings.button_1 }}</a>    
+                  {% endif %}      
+                   <span class="count" style="color:{{ section.settings.count_color }}">0{{ forloop.index }}</span>
+               
+               </div>
+             </li>
+               {% endfor %}
+           </ul>
+         </div>
+         
+              
+       </div>
+       <div class="nav_lookbook_items">
+            <a class="prev active"></a>
+            <a class="next"></a>  
+          </div>
+       <style>
+         .look-book-content .btn { border:none;background:{{ section.settings.button_bg }};color:{{ section.settings.button_txt }}; }
+         .look-book-content .btn:hover { background:{{ section.settings.button_bg_hover }};color:{{ section.settings.button_txt_hover }}; }
+    {% if section.settings.heading_image_need %} .look-book-style-1 .border-title:after {  content:"";background-image:url({{ section.settings.heading_image | img_url: 'master' }});display:inline-block;background-repeat:no-repeat;width:135px;height:57px;} {% endif %}
+       </style>
+   </div>
+  </div>
+</div>
+<div class="dt-sc-hr-invisible-large"></div>
+ <script type="text/javascript">    
+    var colours = ["{{ settings.letter_one }}", "{{ settings.letter_two }}", "{{ settings.letter_three }}", "{{ settings.letter_four }}", "{{ settings.letter_five }}", "{{ settings.letter_six }}", "{{ settings.letter_seven }}"], idx;
+    $(function() {
+    var div = $('.look-book-style-1 .border-title h2'); 
+    var chars = div.text().split('');
+    div.html('');     
+    for(var i=0; i<chars.length; i++) {
+        idx = Math.floor(Math.random() * colours.length);
+        var span = $('<span>' + chars[i] + '</span>').css("color", colours[idx]);
+        div.append(span);
+    }
+});
+    
+  </script>
+
+{% schema %}
+{
+	"name": "Lookbook",
+	"max_blocks": 10,
+	"settings": [
+      {
+      "type": "text",
+      "id": "title_1",
+      "label": "Title"
+      },
+{
+      "type": "checkbox",
+      "id": "heading_image_need",
+      "label": "Show Title Image ?"
+      
+    },	
+{
+      "type": "image_picker",
+      "id": "heading_image",
+      "label": "Image",
+"info": "Size: 133x56"
+      
+    },	
+      {
+      "type": "color",
+      "id": "title_1_color",
+      "label":"Title",
+      "default": "#000"
+      },
+	{
+      "type": "text",
+      "id": "caption_1",
+      "label": "Short text"
+      },
+      {
+      "type": "color",
+      "id": "caption_1_color",
+      "label":"Short Text",
+      "default": "#000"
+      },
+ {
+      "type": "color",
+      "id": "count_color",
+      "label":"Count Color",
+      "default": "#000"
+      },
+   {
+            "type": "color",
+            "id": "button_bg",
+            "label": "Button bg color",
+     		"default": "#000"
+            },
+           {
+            "type": "color",
+            "id": "button_txt",
+            "label": "Button text color",
+     		"default": "#fff"
+            },
+{
+            "type": "color",
+            "id": "button_bg_hover",
+            "label": "Button hover bg color",
+     		"default": "#000"
+            },
+           {
+            "type": "color",
+            "id": "button_txt_hover",
+            "label": "Button hover text color",
+     		"default": "#fff"
+            }
+
+],
+	"blocks" : [ 
+		{
+			"type": "image",
+			"name": "Lookbook",
+			"settings": [
+				{
+            "type": "image_picker",
+            "id": "image_1",
+            "label": "Image",
+"info": "Size: 300x608"
+            },
+           {
+            "type": "text",
+            "id": "title",
+            "label": "Heading"
+            },
+             {
+            "type": "color",
+            "id": "title_clr",
+            "label": "Heading color",
+     		"default": "#000"
+            },
+            {
+            "type": "textarea",
+            "id": "desc",
+            "label": "Description"
+            },
+			 {
+            "type": "color",
+            "id": "desc_clr",
+            "label": "Description Color",
+     		"default": "#000"
+            },
+            {
+            "type": "text",
+            "id": "button_1",
+            "label": "Button text"
+            },
+          
+            {
+            "type": "url",
+            "id": "link_1",
+            "label": "Link URL"
+            }
+			]
+		}
+	],
+"presets": [
+{
+"name": "Look book",
+"category": "Image",
+"blocks": []
+}
+]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+
+
+ 
+
+
+
+#css-script-menu {
+position: fixed;
+height: 90px;
+width: 100%;
+top: 0;
+left: 0;
+border-top: 5px solid #16a1e7;
+background: #fff;
+-moz-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+-webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+z-index: 999999;
+padding: 10px 0;
+-webkit-box-sizing:content-box;
+-moz-box-sizing:content-box;
+box-sizing:content-box;
+}
+
+.css-script-center {
+width: 960px;
+margin: 0 auto;
+}
+.css-script-center ul {
+width: 212px;
+float:left;
+line-height:45px;
+margin:0;
+padding:0;
+list-style:none;
+}
+.css-script-center a {
+	text-decoration:none;
+}
+.css-script-ads {
+width: 728px;
+height:90px;
+float:right;
+}
+.css-script-clear {
+clear:both;
+height:0;
+}
+
+
+{% endstylesheet %}
+
+{% javascript %}
+  $(document).ready(function(){
+ /*  var look__book_count = $('.look-book .look__book-items').length;
+      if(look__book_count > 1) { $('.nav_lookbook_items').css('display','block');}
+      else {$('.nav_lookbook_items').css('display','none');}
+      var top_products = $(".look-book");
+      top_products.owlCarousel({
+        items: 1,
+        itemsCustom: false,
+        itemsDesktop: [1199, 1],
+        itemsDesktopSmall: [980, 1],
+        itemsTablet: [630, 1],
+        itemsTabletSmall: false,
+        itemsMobile: [479, 1],
+        singleItem: false,
+        itemsScaleUp: false,
+        responsive: true,
+        responsiveRefreshRate: 200,
+        responsiveBaseWidth: window,
+        autoPlay: false,
+        stopOnHover: false,
+        navigation: false,
+        pagination:false
+      });
+      // Custom Navigation Events
+      $(".nav_lookbook_items .next").click(function(){
+        look-book.trigger('owl.next');
+      })
+      $(".nav_lookbook_items .prev").click(function(){
+        look-book.trigger('owl.prev');
+      }) */
+  });
+{% endjavascript %}
+

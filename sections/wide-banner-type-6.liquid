@@ -1,0 +1,121 @@
+<div data-section-id="{{ section.id }}" data-section-type="wide-banner-type-2" class="wide-banner-type-6">  
+  <div class="grid-uniform">    
+       {% if section.settings.image_1 != blank %}
+       <div class="wide-banner-type-6-block parallax" style="background-image:url('{{ section.settings.image_1 | img_url: 'master' }}');background-repeat:no-repeat;background-size:cover;background-position:center;">
+     {% else %}
+	 <div class="wide-banner-type-6-block parallax">
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif%}           
+     
+      <div class="wide-banner-type-6-content">               
+        {% if section.settings.text != blank %}
+        <p style="color:{{ section.settings.text_color }}">{{ section.settings.text }}</p>
+        {% endif %}
+        {% if section.settings.title != blank %}
+         <h2 style="color:{{ section.settings.title_color }}">{{ section.settings.title }}</h2>
+        {% endif %}
+        
+        {% if section.settings.button != blank %}
+        <a class="btn" href="{{ section.settings.link_1 }}" style="color:{{ section.settings.button_txt_color }};border:none;background-color:{{ section.settings.button_bg_color }};">{{ section.settings.button }}</a>    
+        {% endif %}         
+      </div>      
+    
+   </div>
+    <style>
+      .wide-banner-type-6 .wide-banner-type-6-content .btn:hover { background:{{ section.settings.hover_button_bg_color }} !important;color:{{ section.settings.hover_button_txt_color }} !important;  }
+   .wide-banner-type-6-block:before, .wide-banner-type-6-block:after {
+     background-image: -webkit-linear-gradient(315deg, {{ section.settings.zig_zax_pattern }} 25%, transparent 25%), linear-gradient(45deg, {{ section.settings.zig_zax_pattern }} 25%, transparent 25%);
+    background-image: -moz-linear-gradient(315deg, {{ section.settings.zig_zax_pattern }} 25%, transparent 25%), linear-gradient(45deg, {{ section.settings.zig_zax_pattern }} 25%, transparent 25%);
+    background-image: -ms-linear-gradient(315deg, {{ section.settings.zig_zax_pattern }} 25%, transparent 25%), linear-gradient(45deg, {{ section.settings.zig_zax_pattern }} 25%, transparent 25%);
+    background-image: -o-linear-gradient(315deg, {{ section.settings.zig_zax_pattern }} 25%, transparent 25%), linear-gradient(45deg, {{ section.settings.zig_zax_pattern }} 25%, transparent 25%);
+    background-image: linear-gradient(315deg, {{ section.settings.zig_zax_pattern }} 25%, transparent 25%), linear-gradient(45deg, {{ section.settings.zig_zax_pattern }} 25%, transparent 25%);
+}
+    </style>
+  </div>
+</div>
+<div class="dt-sc-hr-invisible-large"></div>
+{% schema %}
+{
+"name": "Wide Banner",
+"class": "index-section",
+"settings": [
+{
+"type": "image_picker",
+"id": "image_1",
+"label": "Image",
+"info": "Size: 1920x1000"
+},
+{
+"type": "color",
+"id": "zig_zax_pattern",
+"label":"Zig Zag Pattern Color",
+"default": "#000"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Heading"
+},
+{
+"type": "color",
+"id": "title_color",
+"label":"Title color",
+"default": "#000"
+},
+{
+"type": "textarea",
+"id": "text",
+"label": "Description"
+},
+{
+"type": "color",
+"id": "text_color",
+"label":"Description color",
+"default": "#000"
+},
+{
+"type": "text",
+"id": "button",
+"label": "Button text"
+},
+{
+"type": "color",
+"id": "button_bg_color",
+"label":"Background color",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "button_txt_color",
+"label":"Text color",
+"default": "#fff"
+},
+{
+"type": "color",
+"id": "hover_button_bg_color",
+"label":"Background Hover color",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "hover_button_txt_color",
+"label":"Text Hover color",
+"default": "#fff"
+},
+{
+"type": "url",
+"id": "link_1",
+"label": "Link URL"
+}
+],
+"presets": [
+{
+"name": "Wide Banner",
+"category": "Image",
+"blocks": []
+}
+]
+}
+{% endschema %}
+
+

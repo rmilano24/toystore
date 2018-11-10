@@ -1,0 +1,178 @@
+<div data-section-id="{{ section.id }}"  data-section-type="support-block-type-3" class="support-block-type-3">  
+  <div class="container">    
+  <div class="grid-uniform">
+       <ul class="support_block">         
+        {% if section.blocks.size > 0 %}      
+        {% for block in section.blocks %}
+        {% case section.blocks.size %}
+        {% when 1 %}
+         {%- assign block_width = 'one-whole text-center' -%}
+        {% when 2 %}
+         {%- assign block_width = 'wide--one-half post-large--one-half large--one-half medium--one-half small-grid__item' -%}
+        {% when 3 %}
+         {%- assign block_width = 'wide--one-third post-large--one-third large--one-third medium--one-third small-grid__item' -%}
+         {% when 4 %}
+         {%- assign block_width = 'wide--one-quarter post-large--one-third large--one-third medium--one-half small-grid__item' -%}
+        {% endcase %}
+        <li class="grid__item {{ block_width }} wow fadeInUp"  data-wow-delay="{{ settings.time_lazy_load }}ms">
+          <div class="support_section hover panel">  
+            <div class="front">
+            <div class="box1">
+                  <div class="support_icon">                      
+                 {% if block.settings.class != blank  %}  <a href="{{ block.settings.link }}">    <i class="{{ block.settings.class }}" style="color:{{ block.settings.icon_clr }};"></i></a>{% endif %} 
+                 </div>
+                     <div class="support_text"> 
+                   {% if block.settings.title != blank  %}  
+                  <h6 style="color:{{ block.settings.title_clr }};">{{ block.settings.title }}</h6>
+                  {% endif %} 
+                  {% if block.settings.desc != blank  %}  
+                  <p class="desc" style="color:{{ block.settings.desc_clr }};">{{ block.settings.desc }}</p>
+                  {% endif %} 
+                   </div>    
+              </div>
+              </div>
+          
+              <div class="back" style="background-color: {{ block.settings.panel_1_bg }};">
+            <div class="box2">
+              <div class="content">
+              <p style="color:{{ block.settings.panel_1_text }}">{{ block.settings.backside_content }}</p>
+              <a style="color:{{ block.settings.btn_text }};background:{{ block.settings.btn_bg }};" href="{{ block.settings.link }}" class="btn">{{ block.settings.backsidebtn }}</a>
+              </div>
+            </div>
+          </div>
+            </div>
+      </li>
+         
+         {% endfor %}
+         
+        {% endif %}
+    </ul>
+      </div>
+  </div>
+  
+  </div>  
+
+<div class="dt-sc-hr-invisible-large"></div>
+{% schema %}
+{
+  "name": "Support Block",
+  "class": "index-section",
+  "max_blocks":4,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "support block",
+      "settings": [ 
+ 		 {
+          "type": "text",
+          "id": "class",
+          "label": "Material Icon Class",
+          "default": "zmdi zmdi-truck"   
+        },
+		{
+          "type": "color",
+          "id": "icon_clr",
+          "label": "Icon color",
+          "default": "#000"   
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"          
+        },
+		{
+          "type": "color",
+          "id": "title_clr",
+          "label": "Heading",
+ 		  "default": "#000"   
+        },    
+ 		{
+          "type": "text",
+          "id": "desc",
+          "label": "Description"          
+        }, 
+		{
+          "type": "color",
+          "id": "desc_clr",
+          "label": "Description",
+ 		  "default": "#000"   
+        }, 
+{
+          "type": "textarea",
+          "id": "backside_content",
+          "label": "Backside Description"          
+        }, 
+{
+          "type": "color",
+          "id": "panel_1_bg",
+          "label": "Backside Bg",
+ 		  "default": "#000"   
+        }, 
+{
+          "type": "color",
+          "id": "panel_1_text",
+          "label": "Backside Text",
+ 		  "default": "#000"   
+        },
+{
+          "type": "text",
+          "id": "backsidebtn",
+          "label": "Btn"          
+        },
+{
+          "type": "color",
+          "id": "btn_text",
+          "label": "Btn Text",
+ 		  "default": "#000"   
+        },
+ 		{
+          "type": "color",
+          "id": "btn_bg",
+          "label": "Btn Bg",
+ 		  "default": "#000"   
+        },
+		{
+          "type": "text",
+          "id": "link",
+          "label": "Link"          
+        }      
+		
+      ]
+    }
+  ],
+  "presets": [
+    {
+       "name": "Support Block",
+      "category": "Text",
+      "blocks": [
+        {
+          "type": "text"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "text"
+        }
+ 		
+      ]
+    }
+  ]
+}
+{% endschema %}
+<script type="text/javascript">
+
+$(document).ready(function(){
+		// set up hover panels
+		// although this can be done without JavaScript, we've attached these events
+		// because it causes the hover to be triggered when the element is tapped on a touch device
+		$('.hover').hover(function(){
+			$(this).addClass('flip');
+		},function(){
+			$(this).removeClass('flip');
+		});
+	});
+
+
+</script>
